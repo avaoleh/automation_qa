@@ -15,3 +15,4 @@ class TestElements:
             assert email == output_email, "the email does not match"
             assert current_address == output_addr, "the current address does not match"
             assert permanent_address == output_per_addr, "the permanent address does not match"
+

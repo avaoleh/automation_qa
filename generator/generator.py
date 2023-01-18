@@ -1,7 +1,7 @@
 import os
 import random
 
-from data.data import Person
+from data.data import Person, Color
 from faker import Faker
 
 faker_ru = Faker('ru_RU')
@@ -23,7 +23,7 @@ def generated_person():
 
 
 def generated_file():
-    #path = os.path.abspath(f"filetest{random.randint(0, 999)}.txt")
+    # path = os.path.abspath(f"filetest{random.randint(0, 999)}.txt")
     relative_path = f"resources\\filetest{random.randint(0, 999)}.txt"
 
     abs_path = os.path.abspath(
@@ -32,3 +32,9 @@ def generated_file():
     with open(abs_path, 'w+') as file:
         file.write(f'Hello World{random.randint(0, 999)}')
     return file.name, abs_path
+
+
+def generated_color():
+    yield Color(
+        color_name=["Red", "Blue", "Green", "Yellow", "Purple", "Black", "White", "Voilet", "Indigo", "Magenta", "Aqua"]
+    )

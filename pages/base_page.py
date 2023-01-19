@@ -43,3 +43,7 @@ class BasePage:
         action = ActionChains(self.browser)
         action.context_click(element)
         action.perform()
+
+    def remove_footer(self):
+        self.browser.execute_script("document.getElementsByTagName('footer')[0].remove();")
+        self.browser.execute_script("document.getElementById('close-fixedban').remove();")

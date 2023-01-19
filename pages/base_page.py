@@ -44,6 +44,21 @@ class BasePage:
         action.context_click(element)
         action.perform()
 
+    def action_drag_and_drop_by_offset(self, element, x_coords, y_coords):
+        action = ActionChains(self.browser)
+        action.drag_and_drop_by_offset(element, x_coords, y_coords)
+        action.perform()
+
+    def action_drag_and_drop_to_element(self, what, where):
+        action = ActionChains(self.browser)
+        action.drag_and_drop(what, where)
+        action.perform()
+
+    def action_move_to_element(self, element):
+        action = ActionChains(self.browser)
+        action.move_to_element(element)
+        action.perform()
+
     def remove_footer(self):
         self.browser.execute_script("document.getElementsByTagName('footer')[0].remove();")
         self.browser.execute_script("document.getElementById('close-fixedban').remove();")
